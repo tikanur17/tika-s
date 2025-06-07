@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kuis Cuaca</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #fff3e0; }
+    h1 { color: #e65100; }
+    .question { margin-bottom: 20px; }
+    button { margin-top: 10px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h1>🎮 Kuis Prediksi Cuaca</h1>
+  <div class="question">
+    <p>Suhu: 32°C, Kelembapan: 40%. Apa prediksi cuacanya?</p>
+    <button onclick="cekJawaban('Cerah')">☀️ Cerah</button>
+    <button onclick="cekJawaban('Hujan')">🌧️ Hujan</button>
+    <button onclick="cekJawaban('Berawan')">🌤️ Berawan</button>
+  </div>
+  <h2 id="feedback"></h2>
+  <script>
+    function cekJawaban(jawaban) {
+      if (jawaban === 'Cerah') {
+        document.getElementById("feedback").textContent = "✅ Benar!";
+      } else {
+        document.getElementById("feedback").textContent = "❌ Salah. Coba lagi.";
+      }
+    }
+  </script>
+</body>
+</html>

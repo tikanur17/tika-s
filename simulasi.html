@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulasi Cuaca</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #e3f2fd; }
+    h1 { color: #01579b; }
+    label, input, button { display: block; margin-top: 15px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h1>🔬 Simulasi Cuaca Berdasarkan Suhu dan Kelembapan</h1>
+  <label for="suhu">Suhu (°C):</label>
+  <input type="number" id="suhu" placeholder="Misal: 30">
+  <label for="kelembapan">Kelembapan (%):</label>
+  <input type="number" id="kelembapan" placeholder="Misal: 70">
+  <button onclick="prediksiCuaca()">Prediksi Cuaca</button>
+  <h2 id="hasil"></h2>
+  <script>
+    function prediksiCuaca() {
+      let suhu = parseFloat(document.getElementById("suhu").value);
+      let kelembapan = parseFloat(document.getElementById("kelembapan").value);
+      let hasil = "Cuaca tidak terdeteksi";
+      if (suhu > 30 && kelembapan < 60) {
+        hasil = "☀️ Cerah";
+      } else if (suhu > 25 && kelembapan >= 60) {
+        hasil = "🌤️ Berawan";
+      } else if (kelembapan > 80) {
+        hasil = "🌧️ Hujan";
+      }
+      document.getElementById("hasil").textContent = "Prediksi Cuaca: " + hasil;
+    }
+  </script>
+</body>
+</html>
